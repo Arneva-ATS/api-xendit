@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
 
-dotenv.config({path:'.env'})
+dotenv.config({ path: '.env' })
 
-export const PORT = process.env.PORT
+export const { PORT, SECRET_API_KEY } = process.env
