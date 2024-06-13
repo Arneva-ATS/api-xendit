@@ -12,6 +12,7 @@ pipeline{
         }
         stage('Deliver'){
             steps {
+                sh 'docker container rm --force api-xendit-container'
                 sh 'docker run --name api-xendit-container -p  5000:5000 arneva-ats/api-xendit &'
                 }
         }
