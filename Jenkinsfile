@@ -1,9 +1,5 @@
 pipeline{
     agent any
-    environment {
-        PORT = '5000'
-        XENDIT_SECRET_KEY = 'xnd_development_zktbz7XVK69YZ8WtFeGewxMVOlU36BRLljuKomaNuhZe5ZxNAO7RUj5ifBeKc'
-    }
     triggers{
         githubPush()
     }
