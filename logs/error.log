@@ -1,0 +1,4 @@
+2024-06-13 11:55:02 error: Failed to create invoice: Required parameter requestParameters.data was null or undefined when calling createInvoice.
+2024-06-13 12:00:18 error: Failed to create invoice: Required parameter requestParameters.data was null or undefined when calling createInvoice.
+2024-06-13 12:02:31 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-13 12:02:31 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
