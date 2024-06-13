@@ -29,3 +29,21 @@ export const createPayment = async (req: Request, res: Response) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+export const handleXenditCallback = async (req: Request, res: Response) => {
+    try {
+        const callbackData = req.body;
+        logger.info('Received callback from Xendit: ' + JSON.stringify(callbackData));
+
+        // Process the callback data as needed
+        // Example: Update payment status in your database
+        // const { id, status, amount, external_id } = callbackData;
+
+        // Your logic to handle the callback
+
+        res.status(200).json({ message: 'Callback received successfully' });
+    } catch (error:any) {
+        logger.error('Error handling Xendit callback: ' + error.message);
+        res.status(500).json({ error: error.message });
+    }
+};
