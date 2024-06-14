@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "2ff3a88e-aebb-4454-8ee5-9cd8479b713b",
+		"name": "RKI-Xendit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27881239"
+	},
+	"item": [
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "callback-payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-xendit.arneva.co.id/v1/api/xendit/callback-payment",
+							"protocol": "https",
+							"host": [
+								"api-xendit",
+								"arneva",
+								"co",
+								"id"
+							],
+							"path": [
+								"v1",
+								"api",
+								"xendit",
+								"callback-payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-invoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 110000,\r\n  \"payer_email\": \"example@example.com\",\r\n  \"description\": \"Example Description\",\r\n  \"invoice_duration\": \"3600\",\r\n  \"currency\": \"IDR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-xendit.arneva.co.id/v1/api/xendit/create-payment",
+							"protocol": "https",
+							"host": [
+								"api-xendit",
+								"arneva",
+								"co",
+								"id"
+							],
+							"path": [
+								"v1",
+								"api",
+								"xendit",
+								"create-payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
