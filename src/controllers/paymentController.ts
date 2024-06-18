@@ -25,8 +25,8 @@ export const createPayment = async (req: Request, res: Response) => {
             invoiceDuration: 3600,
             customer: customer,
             // customerNotificationPreference: customer_notification_preference,
-            successRedirectUrl: "https://rkiapp.com/admin",
-            failureRedirectUrl: "https://rkiapp.com/admin",
+            successRedirectUrl: "https://rkiapp.arnevats.com/admin",
+            failureRedirectUrl: "https://rkiapp.arnevats.com/admin",
             currency: "IDR",
             items: items,
         };
