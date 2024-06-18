@@ -4,20 +4,31 @@ import logger from '../utils/logger';
 
 export const createPayment = async (req: Request, res: Response) => {
     try {
-        const { amount, payer_email, description, invoice_duration, currency } = req.body;
-
-        if (!amount || !payer_email || !description) {
-            logger.error('Missing required fields: amount, payer_email, or description');
-            return res.status(400).json({ error: 'amount, payer_email, and description are required fields' });
+        const {
+            amount,
+            description,
+            customer,
+            // customer_notification_preference,
+            items,
+        } = req.body;
+        console.log(req.body);
+        
+        if (!amount || !items || !description || !customer) {
+            logger.error('Missing required fields');
+            return res.status(400).json({ error: 'amount, items, description, customer are required fields' });
         }
 
         const invoiceData = {
             externalId: `invoice-${Date.now()}`,
-            amount: amount,
-            payerEmail: payer_email,
+            amount: parseInt(amount),
             description: description,
-            invoiceDuration: invoice_duration,
-            currency: currency
+            invoiceDuration: 3600,
+            customer: customer,
+            // customerNotificationPreference: customer_notification_preference,
+            successRedirectUrl: "https://rkiapp.com/admin",
+            failureRedirectUrl: "https://rkiapp.com/admin",
+            currency: "IDR",
+            items: items,
         };
 
         logger.info('Invoice data: ' + JSON.stringify(invoiceData));

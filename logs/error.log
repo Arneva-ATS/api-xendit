@@ -2,3 +2,30 @@
 2024-06-13 12:00:18 error: Failed to create invoice: Required parameter requestParameters.data was null or undefined when calling createInvoice.
 2024-06-13 12:02:31 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
 2024-06-13 12:02:31 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:30:28 error: Missing required fields
+2024-06-18 11:30:53 error: Missing required fields
+2024-06-18 11:32:00 error: Missing required fields
+2024-06-18 11:33:08 error: Missing required fields
+2024-06-18 11:33:50 error: Missing required fields
+2024-06-18 11:35:00 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:35:00 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:36:05 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:36:05 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:38:53 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:38:53 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:40:32 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:40:32 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:43:48 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:43:48 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:44:42 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:44:42 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:45:52 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:45:52 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:46:45 error: Failed to create invoice: Cannot read properties of null (reading 'map')
+2024-06-18 11:46:45 error: Error creating payment: Failed to create invoice: Cannot read properties of null (reading 'map')
+2024-06-18 11:47:35 error: Failed to create invoice: value.items.map is not a function
+2024-06-18 11:47:35 error: Error creating payment: Failed to create invoice: value.items.map is not a function
+2024-06-18 11:47:54 error: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:47:54 error: Error creating payment: Failed to create invoice: [Xendit SDK Error] 400 Bad Request
+2024-06-18 11:58:58 error: Failed to create invoice: value.items.map is not a function
+2024-06-18 11:58:58 error: Error creating payment: Failed to create invoice: value.items.map is not a function
