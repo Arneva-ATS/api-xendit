@@ -20,7 +20,8 @@ export const createPayment = async (req: Request, res: Response) => {
 
         const invoiceData = {
             externalId: `invoice-${Date.now()}`,
-            amount: parseInt(amount),
+            // amount: parseInt(amount),
+            amount: 1,
             description: description,
             invoiceDuration: 3600,
             customer: customer,
