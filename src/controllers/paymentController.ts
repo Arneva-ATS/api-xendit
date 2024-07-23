@@ -8,28 +8,54 @@ export const createPayment = async (req: Request, res: Response) => {
             amount,
             description,
             customer,
-            // customer_notification_preference,
+            fees,
+            metadata,
+            success_redirect_url,
+            failure_redirect_url,
             items,
         } = req.body;
         console.log(req.body);
         
-        if (!amount || !items || !description || !customer) {
-            logger.error('Missing required fields');
-            return res.status(400).json({ error: 'amount, items, description, customer are required fields' });
+       // Collect missing required fields
+       const missingFields = [];
+       if (!amount) missingFields.push('amount');
+       if (!items) missingFields.push('items');
+       if (!description) missingFields.push('description');
+       if (!customer) missingFields.push('customer');
+       if (!success_redirect_url) missingFields.push('success_redirect_url');
+       if (!failure_redirect_url) missingFields.push('failure_redirect_url');
+
+       // Check if there are any missing required fields
+       if (missingFields.length > 0) {
+           const errorMessage = `Missing required fields: ${missingFields.join(', ')}`;
+           logger.error(errorMessage);
+           return res.status(400).json({ error: errorMessage });
+       }
+
+        // Validate amount
+        if (isNaN(amount) || amount <= 0) {
+            logger.error('Invalid amount');
+            return res.status(400).json({ error: 'Invalid amount' });
+        }
+
+        // Validate items as array
+        if (!Array.isArray(items) || items.length === 0) {
+            logger.error('Invalid items');
+            return res.status(400).json({ error: 'Invalid items' });
         }
 
         const invoiceData = {
             externalId: `invoice-${Date.now()}`,
             amount: parseInt(amount),
-            // amount: 1,
+            fees: fees,
             description: description,
-            invoiceDuration: 3600,
+            invoiceDuration: 300,
             customer: customer,
-            // customerNotificationPreference: customer_notification_preference,
-            successRedirectUrl: "https://rkiapp.arnevats.com/admin",
-            failureRedirectUrl: "https://rkiapp.arnevats.com/admin",
+            successRedirectUrl: success_redirect_url,
+            failureRedirectUrl: failure_redirect_url,
             currency: "IDR",
             items: items,
+            metadata: metadata,
         };
 
         logger.info('Invoice data: ' + JSON.stringify(invoiceData));
@@ -50,7 +76,6 @@ export const handleXenditCallback = async (req: Request, res: Response) => {
         // Process the callback data as needed
         // Example: Update payment status in your database
         // const { id, status, amount, external_id } = callbackData;
-
         // Your logic to handle the callback
 
         res.status(200).json({ message: 'Callback received successfully' });
