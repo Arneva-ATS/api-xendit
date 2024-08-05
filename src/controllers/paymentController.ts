@@ -16,21 +16,21 @@ export const createPayment = async (req: Request, res: Response) => {
         } = req.body;
         console.log(req.body);
         
-        // Collect missing required fields
-        const missingFields = [];
-        if (!amount) missingFields.push('amount');
-        if (!items) missingFields.push('items');
-        if (!description) missingFields.push('description');
-        if (!customer) missingFields.push('customer');
-        if (!success_redirect_url) missingFields.push('success_redirect_url');
-        if (!failure_redirect_url) missingFields.push('failure_redirect_url');
+       // Collect missing required fields
+       const missingFields = [];
+       if (!amount) missingFields.push('amount');
+       if (!items) missingFields.push('items');
+       if (!description) missingFields.push('description');
+       if (!customer) missingFields.push('customer');
+       if (!success_redirect_url) missingFields.push('success_redirect_url');
+       if (!failure_redirect_url) missingFields.push('failure_redirect_url');
 
-        // Check if there are any missing required fields
-        if (missingFields.length > 0) {
-            const errorMessage = `Missing required fields: ${missingFields.join(', ')}`;
-            logger.error(errorMessage);
-            return res.status(400).json({ error: errorMessage });
-        }
+       // Check if there are any missing required fields
+       if (missingFields.length > 0) {
+           const errorMessage = `Missing required fields: ${missingFields.join(', ')}`;
+           logger.error(errorMessage);
+           return res.status(400).json({ error: errorMessage });
+       }
 
         // Validate amount
         if (isNaN(amount) || amount <= 0) {
