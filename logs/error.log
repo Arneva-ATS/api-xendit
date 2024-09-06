@@ -31,3 +31,13 @@
 2024-06-18 11:58:58 error: Error creating payment: Failed to create invoice: value.items.map is not a function
 2024-09-06 14:17:14 error: Failed to create invoice: fetch is not defined
 2024-09-06 14:17:14 error: Error creating payment: Failed to create invoice: fetch is not defined
+2024-09-06 15:05:23 error: Failed to create invoice: fetch is not defined
+2024-09-06 15:05:23 error: Error creating payment: Failed to create invoice: fetch is not defined
+2024-09-06 15:10:07 error: Failed to create invoice: fetch is not defined
+2024-09-06 15:10:07 error: Error creating payment: Failed to create invoice: fetch is not defined
+2024-09-06 15:18:22 error: Failed to create invoice: fetch is not defined
+2024-09-06 15:18:22 error: Error creating payment: Failed to create invoice: fetch is not defined
+2024-09-06 15:20:34 error: Failed to create invoice: fetch is not defined
+2024-09-06 15:20:34 error: Error creating payment: Failed to create invoice: fetch is not defined
+2024-09-06 15:55:59 error: Failed to create invoice: fetch is not defined
+2024-09-06 15:55:59 error: Error creating payment: Failed to create invoice: fetch is not defined
