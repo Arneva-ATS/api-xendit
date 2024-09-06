@@ -98,6 +98,7 @@ export const handleXenditCallback = async (req: Request, res: Response) => {
 		})
 		.then(response => response.json())
 		.then(async data => {
+			console.log(data)
 			if(data.response_code == "00"){
 				res.status(200).json({ message: 'Callback received successfully' });
 			} else{
