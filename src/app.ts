@@ -8,9 +8,8 @@ import helmet from 'helmet';
 const app = express();
 // Konfigurasi CORS yang lebih spesifik
 const corsOptions = {
-	origin: 'https://rkiapp.arnevats.com', // Ganti ini dengan domain yang Anda izinkan
 	methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-	allowedHeaders: ['Content-Type', 'Authorization'],
+	allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
 	credentials: true, // Jika Anda menggunakan kredensial seperti cookies, pastikan ini diatur
   };
 app.use(express.json());
