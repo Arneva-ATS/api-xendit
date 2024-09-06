@@ -65,7 +65,7 @@ export const createPayment = async (req: Request, res: Response) => {
 				'Content-Type': 'application/json'
 			},
 			method: "POST",
-			body: JSON.stringify({ externalId })
+			body: JSON.stringify({ externalId, id_pos })
 		})
 		.then(response => response.json())
 		.then(async data => {
