@@ -44,7 +44,7 @@ export const createPayment = async (req: Request, res: Response) => {
             logger.error('Invalid items');
             return res.status(400).json({ error: 'Invalid items' });
         }
-		console.log(id_pos);
+		// console.log(id_pos);
 		let externalId = `invoice-${Date.now()}`
         const invoiceData = {
             externalId: externalId,
