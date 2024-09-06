@@ -15,7 +15,7 @@ export const createPayment = async (req: Request, res: Response) => {
             failure_redirect_url,
             items,
         } = req.body;
-        console.log(req.body);
+        // console.log(req.body);
         
        // Collect missing required fields
        const missingFields = [];
