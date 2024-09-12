@@ -90,29 +90,28 @@ export const handleXenditCallback = async (req: Request, res: Response) => {
 	try {
 		const callbackData = req.body;
 		logger.info('Received callback from Xendit: ' + JSON.stringify(callbackData));
-		// await fetch('https://api-rki.rkicoop.co.id/api/xendit/callback', {
-		// 	headers: {
-		// 		'Access-Control-Allow-Origin': '*',
-		// 		'Content-Type': 'application/json'
-		// 	},
-		// 	method: "POST",
-		// 	body: JSON.stringify(callbackData)
-		// })
-		// .then(response => response.json())
-		// .then(async data => {
-		// 	console.log(data)
-		// 	if(data.response_code == "00"){
-		// 		res.status(200).json({ message: 'Callback received successfully' });
-		// 	} else{
-		// 		res.status(400).json({ error: data.response_message });
-		// 	}
+		await fetch('https://api-rki.rkicoop.co.id/api/xendit/callback', {
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				'Content-Type': 'application/json'
+			},
+			method: "POST",
+			body: JSON.stringify(callbackData)
+		})
+		.then(response => response.json())
+		.then(async data => {
+			console.log(data)
+			if(data.response_code == "00"){
+				res.status(200).json({ message: 'Callback received successfully' });
+			} else{
+				res.status(400).json({ error: data.response_message });
+			}
 			
-		// })
+		})
 		// Process the callback data as needed
 		// Example: Update payment status in your database
 		// const { id, status, amount, external_id } = callbackData;
 		// Your logic to handle the callback
-		res.status(200).json({ message: 'Callback received successfully' });
 
 	} catch (error: any) {
 		logger.error('Error handling Xendit callback: ' + error.message);
