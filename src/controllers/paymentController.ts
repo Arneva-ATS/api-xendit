@@ -6,7 +6,7 @@ export const createPayment = async (req: Request, res: Response) => {
 	try {
 		const {
 			amount,
-			id_pos,
+			// id_pos,
 			description,
 			customer,
 			fees,
@@ -15,7 +15,7 @@ export const createPayment = async (req: Request, res: Response) => {
 			failure_redirect_url,
 			items,
 		} = req.body;
-		// console.log(req.body);
+		console.log(req.body);
 
 		// Collect missing required fields
 		const missingFields = [];
@@ -44,7 +44,7 @@ export const createPayment = async (req: Request, res: Response) => {
 			logger.error('Invalid items');
 			return res.status(400).json({ error: 'Invalid items' });
 		}
-		console.log(id_pos);
+		// console.log(id_pos);
 		let externalId = `invoice-${Date.now()}`
 		const invoiceData = {
 			externalId: externalId,
@@ -59,24 +59,26 @@ export const createPayment = async (req: Request, res: Response) => {
 			items: items,
 			metadata: metadata,
 		};
-		await fetch('https://api-rki.rkicoop.co.id/api/xendit/create-payment', {
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Content-Type': 'application/json'
-			},
-			method: "POST",
-			body: JSON.stringify({ externalId, id_pos })
-		})
-		.then(response => response.json())
-		.then(async data => {
-			logger.info('Invoice data: ' + JSON.stringify(invoiceData));
-			if (data.response_code == "00") {
-				const invoice = await createInvoice(invoiceData);
-				res.status(201).json(invoice);
-			} else{
-				res.status(400).json({ error: data.response_message });
-			}
-		})
+		// await fetch('https://api-rki.rkicoop.co.id/api/xendit/create-payment', {
+		// 	headers: {
+		// 		'Access-Control-Allow-Origin': '*',
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 	method: "POST",
+		// 	body: JSON.stringify({ externalId, id_pos })
+		// })
+		// .then(response => response.json())
+		// .then(async data => {
+		// 	logger.info('Invoice data: ' + JSON.stringify(invoiceData));
+		// 	if (data.response_code == "00") {
+		// 		const invoice = await createInvoice(invoiceData);
+		// 		res.status(201).json(invoice);
+		// 	} else{
+		// 		res.status(400).json({ error: data.response_message });
+		// 	}
+		// })
+		const invoice = await createInvoice(invoiceData);
+		res.status(200).json({ message: 'Callback received successfully' });
 
 	} catch (error: any) {
 		logger.error('Error creating payment: ' + error.message);
