@@ -9,3 +9,5 @@
 2024-09-12 10:59:57 error: Error creating payment: fetch is not defined
 2024-09-12 11:00:01 error: Error creating payment: fetch is not defined
 2024-09-12 11:00:03 error: Error creating payment: fetch is not defined
+2024-09-12 11:22:51 error: Failed to create invoice: fetch is not defined
+2024-09-12 11:22:51 error: Error creating payment: Failed to create invoice: fetch is not defined

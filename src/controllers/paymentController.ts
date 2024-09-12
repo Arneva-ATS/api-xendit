@@ -78,7 +78,7 @@ export const createPayment = async (req: Request, res: Response) => {
 		// 	}
 		// })
 		const invoice = await createInvoice(invoiceData);
-		res.status(200).json({ message: 'Callback received successfully' });
+		res.status(201).json(invoice);
 
 	} catch (error: any) {
 		logger.error('Error creating payment: ' + error.message);
